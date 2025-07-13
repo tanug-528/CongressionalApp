@@ -1,11 +1,9 @@
 import SwiftUI
-
 // MARK: - ButtonItem Model
 struct ButtonItem: Hashable, Identifiable {
     let id = UUID()
     let label: String
 }
-
 func iconName(for label: String) -> String {
     switch label {
     case "Normal Skin Conditions Analyzer": return "magnifyingglass"
@@ -17,7 +15,6 @@ func iconName(for label: String) -> String {
     default: return "questionmark"
     }
 }
-
 // MARK: - HomePage View
 struct HomePage: View {
     let buttons: [ButtonItem] = [
@@ -28,17 +25,14 @@ struct HomePage: View {
         ButtonItem(label: "General Cancer Test"),
         ButtonItem(label: "Dermatologist Map")
     ]
-
     let tileColors: [Color] = [
         Color(red: 1.0, green: 0.86, blue: 0.86),
         Color(red: 1.0, green: 0.95, blue: 0.92),
         Color(red: 1.0, green: 0.91, blue: 0.8),
         Color(red: 1.0, green: 0.84, blue: 0.73)
     ]
-
     @State private var selectedPage: String? = nil
     @State private var showConfirmation = false
-
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading) {
@@ -54,7 +48,6 @@ struct HomePage: View {
                     }
                 }
                 .padding()
-
                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
                     ForEach(Array(buttons.enumerated()), id: \.offset) { index, button in
                         NavigationLink(value: button.label) {
@@ -76,7 +69,6 @@ struct HomePage: View {
                     }
                 }
                 .padding()
-
                 Spacer()
             }
             .navigationTitle("")
@@ -92,7 +84,6 @@ struct HomePage: View {
             }
         }
     }
-
     @ViewBuilder
     func destinationView(for label: String?) -> some View {
         switch label {
@@ -100,6 +91,8 @@ struct HomePage: View {
             YourHistoryView()
         case "Profile Page":
             ProfilePage()
+        case "General Cancer Test":
+            GeneralSkinCancer()
         case let other?:
             PlaceholderPage(label: other)
         default:
@@ -107,20 +100,15 @@ struct HomePage: View {
         }
     }
 }
-
-
-
 // MARK: - PlaceholderPage View
 struct PlaceholderPage: View {
     let label: String
-
     var body: some View {
         Text(label)
             .font(.title)
             .padding()
     }
 }
-
 // MARK: - YourHistoryView
 struct YourHistoryView: View {
     @AppStorage("age") private var age: Double = 25
@@ -137,7 +125,6 @@ struct YourHistoryView: View {
     @AppStorage("cancerType") private var cancerType = "Not sure"
     @AppStorage("diagnosisAge") private var diagnosisAge = "Not sure"
     @State private var showConfirmation = false
-
     let genders = ["Male", "Female", "Non-binary", "Prefer not to say"]
     let ethnicities = ["Asian", "Black", "Caucasian", "Hispanic", "Mixed", "Other"]
     let hairColors = ["Black", "Brown", "Blonde", "Red", "Grey/White", "Other"]
@@ -155,7 +142,6 @@ struct YourHistoryView: View {
     let familyMembers = ["Parent", "Sibling", "Child", "Grandparent", "Other"]
     let cancerTypes = ["Melanoma", "Basal Cell Carcinoma", "Squamous Cell Carcinoma", "Merkel Cell Carcinoma", "Kaposi Sarcoma", "Not sure"]
     let diagnosisAges = ["1-10", "10-18", "19-25", "26-35", "36-45", "46-55", "56-65", "66-75", "76-85", "86-95", "Not sure"]
-
     var body: some View {
         Form {
             // MARK: - Health Profile Section
@@ -209,13 +195,11 @@ struct YourHistoryView: View {
                     ForEach(moleOptions, id: \.self) { Text($0) }
                 }
             }
-
             // MARK: - Family History Section
             Section(header: Text("Family History")) {
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Has anyone in your family had any form of cancer?")
                         .font(.headline)
-
                     Picker("Select", selection: $familyCancerHistory) {
                         Text("Select").tag("")
                         Text("Yes").tag("Yes")
@@ -223,7 +207,6 @@ struct YourHistoryView: View {
                     }
                     .pickerStyle(.segmented)
                 }
-
                 if familyCancerHistory == "Yes" {
                     VStack(alignment: .leading, spacing: 10) {
                         Text("Which family member(s) were diagnosed with skin cancer?")
@@ -240,18 +223,15 @@ struct YourHistoryView: View {
                                 Text(member)
                             }
                         }
-
                         Picker("Type of Skin Cancer", selection: $cancerType) {
                             ForEach(cancerTypes, id: \.self) { Text($0) }
                         }
-
                         Picker("Diagnosis Age", selection: $diagnosisAge) {
                             ForEach(diagnosisAges, id: \.self) { Text($0) }
                         }
                     }
                 }
             }
-
             // MARK: - Save Button
             Section {
                 Button("Save Changes") {
@@ -268,8 +248,6 @@ struct YourHistoryView: View {
         }
     }
 }
-
-
 // MARK: - ProfilePage View
 struct ProfilePage: View {
     var body: some View {
@@ -287,3 +265,4 @@ struct ProfilePage: View {
         }
     }
 }
+

@@ -6,6 +6,14 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A623C1A42E241E8A009CC215 /* SkinHealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A623C1A22E241E8A009CC215 /* SkinHealthApp.swift */; };
+		A623C1A52E241E8A009CC215 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A623C1A12E241E8A009CC215 /* HomePage.swift */; };
+		A623C1A62E241E8A009CC215 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A623C1A02E241E8A009CC215 /* Assets.xcassets */; };
+		A623C1B52E242D2D009CC215 /* GeneralSkinCancer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A623C1B42E242D2D009CC215 /* GeneralSkinCancer.swift */; };
+		A623DD1B2E242D53009CC215 /* GeneralSkinCancer_1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A623D0712E242D53009CC215 /* GeneralSkinCancer_1.mlmodel */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		5C0F99242E1882890090539D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,14 +35,14 @@
 		5C0F99162E1882870090539D /* SkinHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkinHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C0F99232E1882890090539D /* SkinHealthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkinHealthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C0F992D2E1882890090539D /* SkinHealthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkinHealthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A623C1A02E241E8A009CC215 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A623C1A12E241E8A009CC215 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		A623C1A22E241E8A009CC215 /* SkinHealthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinHealthApp.swift; sourceTree = "<group>"; };
+		A623C1B42E242D2D009CC215 /* GeneralSkinCancer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSkinCancer.swift; sourceTree = "<group>"; };
+		A623D0712E242D53009CC215 /* GeneralSkinCancer_1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GeneralSkinCancer_1.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		5C0F99182E1882870090539D /* SkinHealth */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = SkinHealth;
-			sourceTree = "<group>";
-		};
 		5C0F99262E1882890090539D /* SkinHealthTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = SkinHealthTests;
@@ -75,7 +83,7 @@
 		5C0F990D2E1882870090539D = {
 			isa = PBXGroup;
 			children = (
-				5C0F99182E1882870090539D /* SkinHealth */,
+				A623C1A32E241E8A009CC215 /* SkinHealthMain */,
 				5C0F99262E1882890090539D /* SkinHealthTests */,
 				5C0F99302E1882890090539D /* SkinHealthUITests */,
 				5C0F99172E1882870090539D /* Products */,
@@ -92,6 +100,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		A623C1A32E241E8A009CC215 /* SkinHealthMain */ = {
+			isa = PBXGroup;
+			children = (
+				A623D0712E242D53009CC215 /* GeneralSkinCancer_1.mlmodel */,
+				A623C1B42E242D2D009CC215 /* GeneralSkinCancer.swift */,
+				A623C1A02E241E8A009CC215 /* Assets.xcassets */,
+				A623C1A12E241E8A009CC215 /* HomePage.swift */,
+				A623C1A22E241E8A009CC215 /* SkinHealthApp.swift */,
+			);
+			path = SkinHealthMain;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +126,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				5C0F99182E1882870090539D /* SkinHealth */,
 			);
 			name = SkinHealth;
 			packageProductDependencies = (
@@ -212,6 +229,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A623C1A62E241E8A009CC215 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +254,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A623C1A42E241E8A009CC215 /* SkinHealthApp.swift in Sources */,
+				A623C1B52E242D2D009CC215 /* GeneralSkinCancer.swift in Sources */,
+				A623C1A52E241E8A009CC215 /* HomePage.swift in Sources */,
+				A623DD1B2E242D53009CC215 /* GeneralSkinCancer_1.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

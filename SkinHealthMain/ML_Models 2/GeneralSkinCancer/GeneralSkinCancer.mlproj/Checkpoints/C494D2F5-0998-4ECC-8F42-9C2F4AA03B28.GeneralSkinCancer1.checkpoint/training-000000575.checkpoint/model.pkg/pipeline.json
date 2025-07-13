@@ -1,0 +1,1 @@
+[{"model":"A788B815-9093-4F09-9746-99200DC2DAB4","weights":{"strides":[1],"scalar":"double","shape":[14343],"index":0}},["Acitinic_Keratosis","Basal_Cell_Carcinoma","Dermatofibroma","Melanoma","Nevus","Seborrheic_Keratosis","Squamous_Cell_Carcinoma","Vascular_Lesion"]]
